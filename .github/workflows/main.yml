@@ -9,9 +9,9 @@ jobs:
   trigger-deploy:
     uses: Mohdabounasar012/reusable_repo/.github/workflows/s3.yml@main  # Correct reference to reusable workflow
     with:
-      bucket_name: reusable-s3-bucket  # The name of the S3 bucket to deploy to
-      region: eu-north-1              # The AWS region of the S3 bucket
-      source_dir: './dist'            # The path to the folder to deploy (e.g., 'dist', 'build', etc.)
+      source_dir: './dist'  # The path to the folder to deploy (e.g., 'dist', 'build', etc.)
+      bucket_name: ${{ secrets.S3_BUCKET_NAME }}  # Secret for S3 bucket name
+      region: ${{ secrets.AWS_REGION }}  # Secret for AWS region
 
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}  # AWS access key
