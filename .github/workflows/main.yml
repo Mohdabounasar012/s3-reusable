@@ -11,8 +11,8 @@ jobs:
     with:
       source_dir: './dist'  # The path to the folder to deploy (e.g., 'dist', 'build', etc.)
       bucket_name: reusable-s3-bucket  # Secret for S3 bucket name
-      region: eu-north-1  # Secret for AWS region
-
+      
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}  # AWS access key
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  # AWS secret access key
+      AWS_REGION: ${{ secrets.AWS_REGION }}
