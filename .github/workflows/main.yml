@@ -11,6 +11,9 @@ jobs:
 
     with:
       bucket_name: ${{ secrets.S3_BUCKET_NAME }}  # The name of the S3 bucket to deploy to
-      region: ${{ secrets.AWS_REGION }}               # The AWS region of the S3 bucket
-      source_dir: './dist'             # The path to the folder to deploy (e.g., 'dist', 'build', etc.)
+      region: ${{ secrets.AWS_REGION }}           # The AWS region of the S3 bucket
+      source_dir: './dist'                        # The path to the folder to deploy (e.g., 'dist', 'build', etc.)
 
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
