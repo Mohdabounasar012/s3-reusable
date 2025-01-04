@@ -8,7 +8,7 @@ on:
 
 jobs:
   trigger-deploy:
-    uses: Mohdabounasar012/reusable_repo/.github/workflows/s3.yml@main  # Correct format for referencing the reusable workflow
+    uses: Mohdabounasar012/reusable_repo/blob/main/.github/workflows/s3.yml@main  # Correct format for referencing the reusable workflow
 
     with:
       bucket_name: reusable-s3-bucket  # The name of the S3 bucket to deploy to
