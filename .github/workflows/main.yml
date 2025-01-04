@@ -9,7 +9,7 @@ jobs:
   trigger-deploy:
     uses: Mohdabounasar012/reusable_repo/.github/workflows/s3.yml@main
     with:
-      source_dir: './dist'  # Directory to deploy
+      source_dir: './'  # Directory to deploy
       bucket_name: reusable-s3-bucket  # Bucket name
 
     secrets:
