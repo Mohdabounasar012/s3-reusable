@@ -3,16 +3,16 @@ name: Trigger Reusable Deploy to S3 from Repo1
 on:
   push:
     branches:
-      - main  # Trigger this when code is pushed to the main branch
+      - main
 
 jobs:
   trigger-deploy:
-    uses: Mohdabounasar012/reusable_repo/.github/workflows/s3.yml@main  # Correct reference to reusable workflow
+    uses: Mohdabounasar012/reusable_repo/.github/workflows/s3.yml@main
     with:
-      source_dir: './dist'  # The path to the folder to deploy (e.g., 'dist', 'build', etc.)
-      bucket_name: reusable-s3-bucket  # Secret for S3 bucket name
-      
+      source_dir: './dist'  # Directory to deploy
+      bucket_name: reusable-s3-bucket  # Bucket name
+
     secrets:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}  # AWS access key
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  # AWS secret access key
-      # AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}  # Pass AWS_REGION secret
